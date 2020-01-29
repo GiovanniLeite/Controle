@@ -98,8 +98,7 @@ public class FormPrincipal extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Usuario usuario = new Usuario(23,"giovanni","40028922","Giovanni Moraes de Oliveirar Leite","3","com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-					FormPrincipal frame = new FormPrincipal(usuario);
+					FormPrincipal frame = new FormPrincipal();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -107,11 +106,11 @@ public class FormPrincipal extends JFrame {
 			}
 		});
 	}
-/*
+	
 	public FormPrincipal() 
 	{
 		
-	}*/
+	}
 	
 	public FormPrincipal(Usuario usuario) {
 		setTitle("Sistema");
@@ -526,13 +525,13 @@ public class FormPrincipal extends JFrame {
 					//meio que encontrei de deixar apenas uma janela aberta sem bugar a classe controleCrud de cada form
 					if(formUsuario == null)
 					{
-						formUsuario = new FormCadastroUsuario();//cria o frame
+						formUsuario = new FormCadastroUsuario(usuario);//cria o frame
 						formUsuario.setVisible(true);//mostra
 					}
 					else
 					{
 						formUsuario.dispose();//desfaz a janela
-						formUsuario = new FormCadastroUsuario();//recria o frame
+						formUsuario = new FormCadastroUsuario(usuario);//recria o frame
 						formUsuario.setVisible(true);//mostra o frame
 					}
 				}

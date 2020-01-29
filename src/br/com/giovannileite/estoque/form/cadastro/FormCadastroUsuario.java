@@ -122,7 +122,12 @@ public class FormCadastroUsuario extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
 	public FormCadastroUsuario() {
+		
+	}
+	
+	public FormCadastroUsuario(Usuario usuario) {
 		
 		
 		setResizable(false);
